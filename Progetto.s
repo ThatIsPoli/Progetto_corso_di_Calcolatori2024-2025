@@ -173,15 +173,12 @@ Continua:       #caricamento di COMMAND
 
 
 #conta il tempo di wait
-wait:   addi $t3, $t3, 1        #5 cicli
-
-#TODO da sistemare il num di cicli       
-        slt $t4, $t3, 7000000   #5 cicli ,2.8 Mln di operazioni perchè 50000000 / 18= 2,8 Mln  
+wait:   addi $t3, $t3, 1        #4 cicli      
+        slt $t4, $t3, 4550000   #4 cicli ,4 550 000 operazioni perchè 50 000 000 / 11= 4 550 000  
         bne $t4, $zero, wait    #3 cicli
-        and $t3, $t3, $zero     #5 cicli ,rende disponibile $t3 per qualsiasi altro utilizzo
         
-
         
+        and $t3, $t3, $zero     #rende disponibile $t3 per qualsiasi altro utilizzo
         jr stampaCommand
         
 
